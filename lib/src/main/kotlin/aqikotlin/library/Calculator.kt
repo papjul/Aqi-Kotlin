@@ -1,5 +1,6 @@
 package aqikotlin.library
 
+import aqikotlin.library.algorithms.Eea
 import aqikotlin.library.algorithms.Epa
 import aqikotlin.library.algorithms.Mee
 import aqikotlin.library.constants.*
