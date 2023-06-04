@@ -1,4 +1,3 @@
-rootProject.name = 'aqikotlin'
-include 'aqikotlin.library'
-include 'aqikotlin.cmd'
 
+rootProject.name = 'aqikotlin'
+include('lib', 'cmd')

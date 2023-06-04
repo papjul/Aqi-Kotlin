@@ -2,7 +2,8 @@
 Library and Command Line Interface (CLI) to convert between Air Quality Index (AQI) value and pollutant concentration, using the following algorithms:
                                                                                                                            
 * United States Environmental Protection Agency (EPA)
-* China Ministry of Environmental Protection (MEP)                                                                                                                                                                                                                                                 China Ministry of Environmental Protection (MEP)
+* China Ministry of Ecology and Environment (MEE)
+* European Environmental Agency (EEA)
 
 Project and Readme are still WIP.
    
@@ -16,9 +17,9 @@ Convert pollutant concentration to AQI using EPA algorithm (use Constants as arg
     // or
     val aqi = Calculator().getAqi(POLLUTANT_PM25, 107, EPA)
     
-Convert pollutant concentration to AQI using MEP algorithm (use Constants as arguments, return Int):
+Convert pollutant concentration to AQI using MEE algorithm (use Constants as arguments, return Int):
 
-    val aqi = Calculator().getAqi(POLLUTANT_NO2_1H, 708, MEP)
+    val aqi = Calculator().getAqi(POLLUTANT_NO2_1H, 708, MEE)
 
 Convert AQI to pollutant concentration (use Constants as arguments, EPA is default algorithm and not required, return either Int or Double):
 
@@ -28,40 +29,40 @@ Constants available
 
     // Pollutants
     EPA: POLLUTANT_PM10 (µg/m³), POLLUTANT_O3_1H (ppm), POLLUTANT_O3_8H (ppm), POLLUTANT_CO_8H (ppm), POLLUTANT_NO2_1H (ppb), POLLUTANT_SO2_1H (ppb), POLLUTANT_PM25 (µg/m³)
-    MEP: POLLUTANT_PM10 (µg/m³), POLLUTANT_O3_1H (µg/m³), POLLUTANT_O3_8H (µg/m³), POLLUTANT_CO_1H (mg/m³), POLLUTANT_CO_24H (mg/m³), POLLUTANT_NO2_1H (µg/m³), POLLUTANT_NO2_24H (µg/m³), POLLUTANT_SO2_1H (µg/m³), POLLUTANT_SO2_24H (µg/m³), POLLUTANT_PM25 (µg/m³)
+    MEE: POLLUTANT_PM10 (µg/m³), POLLUTANT_O3_1H (µg/m³), POLLUTANT_O3_8H (µg/m³), POLLUTANT_CO_1H (mg/m³), POLLUTANT_CO_24H (mg/m³), POLLUTANT_NO2_1H (µg/m³), POLLUTANT_NO2_24H (µg/m³), POLLUTANT_SO2_1H (µg/m³), POLLUTANT_SO2_24H (µg/m³), POLLUTANT_PM25 (µg/m³)
      
     // Algorithms
     EPA
-    MEP
+    MEE
      
 ### Command Line
 
 List pollutants and formats:
 
-    $ java -jar aqikotlin.cmd-1.1.jar --list
+    $ java -jar aqikotlin.cmd-2.0.jar --list
     $ EPA: [pm10 (µg/m³), o3_1h (ppm), o3_8h (ppm), co_8h (ppm), no2_1h (ppb), so2_1h (ppb), pm25 (µg/m³)]
-    $ MEP: [pm10 (µg/m³), o3_1h (µg/m³), o3_8h (µg/m³), co_1h (mg/m³), co_24h (mg/m³), no2_1h (µg/m³), no2_24h (µg/m³), so2_1h (µg/m³), so2_24h (µg/m³), pm25 (µg/m³)]
+    $ MEE: [pm10 (µg/m³), o3_1h (µg/m³), o3_8h (µg/m³), co_1h (mg/m³), co_24h (mg/m³), no2_1h (µg/m³), no2_24h (µg/m³), so2_1h (µg/m³), so2_24h (µg/m³), pm25 (µg/m³)]
     
 Convert pollutant concentration to AQI (default: '--aqi' and '--epa' not required):
 
-    $ java -jar aqikotlin.cmd-1.1.jar --aqi --epa pm10:174    
+    $ java -jar aqikotlin.cmd-2.0.jar --aqi --epa pm10:174    
     $ pm10:110 
         
-Convert pollutant concentration to AQI using MEP algorithm (default: '--aqi' not required):
+Convert pollutant concentration to AQI using MEE algorithm (default: '--aqi' not required):
 
-    $ java -jar aqikotlin.cmd-1.1.jar --aqi --mep pm10:123    
+    $ java -jar aqikotlin.cmd-2.0.jar --aqi --mee pm10:123    
     $ pm10:87 
 
 Convert pollutants concentrations to AQI (default: '--aqi' and '--epa' not required):
 
-    $ java -jar aqikotlin.cmd-1.1.jar --aqi --epa pm10:174 no2:431 pm25:37.8
+    $ java -jar aqikotlin.cmd-2.0.jar --aqi --epa pm10:174 no2:431 pm25:37.8
     $ pm10:110 
     $ no2:163 
     $ pm25:107 
     
 Convert AQI to pollutant concentration:
 
-    $ java -jar aqikotlin.cmd-1.1.jar --cc pm25:137    
+    $ java -jar aqikotlin.cmd-2.0.jar --cc pm25:137    
     $ pm25:50.1
 
 ## Library Installation
@@ -69,15 +70,15 @@ Convert AQI to pollutant concentration:
 ### Maven
 
     <dependency>
-    <groupId>com.thegrxp.aqikotlin</groupId>
-    <artifactId>aqikotlin.library</artifactId>
-    <version>1.1</version>
+    <groupId>com.github.papjul</groupId>
+    <artifactId>Aqi-Kotlin</artifactId>
+    <version>master</version>
     <type>pom</type>
     </dependency>
 
 ### Gradle
 
-    compile 'com.thegrxp.aqikotlin:aqikotlin.library:1.1'
+    implementation 'com.github.papjul:Aqi-Kotlin:master'
 
 
 

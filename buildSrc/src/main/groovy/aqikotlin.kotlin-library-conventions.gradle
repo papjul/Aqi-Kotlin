@@ -1,0 +1,6 @@
+
+plugins {
+    id 'aqikotlin.kotlin-common-conventions'
+
+    id 'java-library'
+}

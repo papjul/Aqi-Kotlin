@@ -1,0 +1,35 @@
+
+plugins {
+    id 'aqikotlin.kotlin-application-conventions'
+}
+
+kotlin {
+    jvmToolchain(8)
+}
+
+group 'com.thegrxp.aqikotlin'
+version '2.0'
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10"
+    implementation "com.xenomachina:kotlin-argparser:2.0.7"
+    implementation project(":lib")
+}
+
+application {
+    mainClass = 'aqikotlin.cmd.MainKt'
+}
+
+/*jar {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    manifest {
+        attributes(
+                'Class-Path': configurations.compileClasspath.collect { it.getName() }.join(' '),
+                'Main-Class': 'aqikotlin.cmd.MainKt'
+        )
+    }
+
+    from(configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }) {
+        exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
+    }
+}*/
