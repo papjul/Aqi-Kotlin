@@ -2,7 +2,7 @@ package aqikotlin.library.algorithms
 
 import aqikotlin.library.constants.*
 
-class Epa {
+class Epa : Algorithm {
 
     private val aqi: List<Number> = listOf(
             0, 50,
@@ -74,7 +74,7 @@ class Epa {
             0.086, 0.105,
             0.106, 0.200)
 
-    val lists: Map<String, List<Number>> = mapOf(
+    override val lists: Map<String, List<Number>> = mapOf(
             AQI to aqi,
             POLLUTANT_PM25 to pm25,
             POLLUTANT_PM10 to pm10,
