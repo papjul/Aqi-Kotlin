@@ -30,10 +30,12 @@ Constants available
     // Pollutants
     EPA: POLLUTANT_PM10 (µg/m³), POLLUTANT_O3_1H (ppm), POLLUTANT_O3_8H (ppm), POLLUTANT_CO_8H (ppm), POLLUTANT_NO2_1H (ppb), POLLUTANT_SO2_1H (ppb), POLLUTANT_PM25 (µg/m³)
     MEE: POLLUTANT_PM10 (µg/m³), POLLUTANT_O3_1H (µg/m³), POLLUTANT_O3_8H (µg/m³), POLLUTANT_CO_1H (mg/m³), POLLUTANT_CO_24H (mg/m³), POLLUTANT_NO2_1H (µg/m³), POLLUTANT_NO2_24H (µg/m³), POLLUTANT_SO2_1H (µg/m³), POLLUTANT_SO2_24H (µg/m³), POLLUTANT_PM25 (µg/m³)
+    EEA: POLLUTANT_PM10 (µg/m³), POLLUTANT_O3_1H (µg/m³), POLLUTANT_NO2_1H (µg/m³), POLLUTANT_SO2_1H (µg/m³), POLLUTANT_PM25 (µg/m³)
      
     // Algorithms
     EPA
     MEE
+    EEA
      
 ### Command Line
 
@@ -42,6 +44,7 @@ List pollutants and formats:
     $ java -jar aqikotlin.cmd-2.0.jar --list
     $ EPA: [pm10 (µg/m³), o3_1h (ppm), o3_8h (ppm), co_8h (ppm), no2_1h (ppb), so2_1h (ppb), pm25 (µg/m³)]
     $ MEE: [pm10 (µg/m³), o3_1h (µg/m³), o3_8h (µg/m³), co_1h (mg/m³), co_24h (mg/m³), no2_1h (µg/m³), no2_24h (µg/m³), so2_1h (µg/m³), so2_24h (µg/m³), pm25 (µg/m³)]
+    $ EEA: [pm10 (µg/m³), o3_1h (µg/m³), no2_1h (µg/m³), so2_1h (µg/m³), pm25 (µg/m³)]
     
 Convert pollutant concentration to AQI (default: '--aqi' and '--epa' not required):
 

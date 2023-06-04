@@ -10,6 +10,7 @@ class Calculator {
 
     private val listEpa = Epa().lists
     private val listMee = Mee().lists
+    private val listEea = Eea().lists
     private var pollutantList: List<Number> = listOf()
     private var aqiList: List<Number> = listOf()
 
@@ -106,7 +107,7 @@ class Calculator {
 
     private fun setAqiBreakpoints(algorithm: Map<String, List<Number>>) {
         when (algorithm) {
-            listEpa, listMee -> aqiList = algorithm[AQI]!!
+            listEpa, listMee, listEea -> aqiList = algorithm[AQI]!!
         }
     }
 
@@ -114,6 +115,7 @@ class Calculator {
         return when (algorithm) {
             EPA -> listEpa
             MEE -> listMee
+            EEA -> listEea
             else -> {
                 return listEpa
             }
