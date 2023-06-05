@@ -15,8 +15,8 @@ class Calculator {
     private var pollutantList: List<Number> = listOf()
     private var aqiList: List<Number> = listOf()
 
-    fun getAqi(pollutantCode: String, pollutantConcentration: Number, algorithm: String = EPA): Int {
-        val concentrationRounded = ConcentrationRounded(pollutantCode, pollutantConcentration.toDouble(), algorithm)
+    fun getAqi(pollutantCode: String, pollutantConcentration: Number, algorithm: String = EPA, convertIfRequired: Boolean = false): Int {
+        val concentrationRounded = ConcentrationRounded(pollutantCode, pollutantConcentration.toDouble(), algorithm, convertIfRequired)
                 .getRoundedConcentrationOnPollutantCode().toDouble()
 
         // Define selected algorithm

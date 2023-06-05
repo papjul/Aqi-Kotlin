@@ -34,12 +34,25 @@ class ConcentrationRoundedTest {
     fun roundToThreeDecimalPlace() {
         // given
         val pollutantCode = POLLUTANT_O3_1H
-        val pollutantConcentration = 0.07621231
+        val pollutantConcentration = 76.21231
         val algorithm = EPA
         // when
         val result = ConcentrationRounded(pollutantCode, pollutantConcentration, algorithm).
                 getRoundedConcentrationOnPollutantCode()
         // then
-        assertEquals(0.076, result)
+        assertEquals(76, result)
+    }
+
+    @Test
+    fun convertIfRequired() {
+        // given
+        val pollutantCode = POLLUTANT_O3_1H
+        val pollutantConcentration = 76.4
+        val algorithm = EPA
+        // when
+        val result = ConcentrationRounded(pollutantCode, pollutantConcentration, algorithm, true).
+        getRoundedConcentrationOnPollutantCode()
+        // then
+        assertEquals(150, result)
     }
 }

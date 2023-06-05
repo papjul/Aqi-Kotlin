@@ -61,18 +61,18 @@ class Epa : Algorithm {
     private val o3_1h: List<Number> = listOf(
             0.0, 0,
             0, 0,
-            0.125, 0.164,
-            0.165, 0.204,
-            0.205, 0.404,
-            0.405, 0.504,
-            0.505, 0.604)
+            125, 164,
+            165, 204,
+            205, 404,
+            405, 504,
+            505, 604)
 
     private val o3_8h: List<Number> = listOf(
-            0.000, 0.054,
-            0.055, 0.070,
-            0.071, 0.085,
-            0.086, 0.105,
-            0.106, 0.200)
+            0.0, 54,
+            55, 70,
+            71, 85,
+            86, 105,
+            106, 200)
 
     override val lists: Map<String, List<Number>> = mapOf(
             AQI to aqi,

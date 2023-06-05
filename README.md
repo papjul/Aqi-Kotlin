@@ -42,7 +42,7 @@ Constants available
 List pollutants and formats:
 
     $ java -jar aqikotlin.cmd-2.0.jar --list
-    $ EPA: [pm10 (µg/m³), o3_1h (ppm), o3_8h (ppm), co_8h (ppm), no2_1h (ppb), so2_1h (ppb), pm25 (µg/m³)]
+    $ EPA: [pm10 (µg/m³), o3_1h (ppb), o3_8h (ppb), co_8h (ppm), no2_1h (ppb), so2_1h (ppb), pm25 (µg/m³)]
     $ MEE: [pm10 (µg/m³), o3_1h (µg/m³), o3_8h (µg/m³), co_1h (mg/m³), co_24h (mg/m³), no2_1h (µg/m³), no2_24h (µg/m³), so2_1h (µg/m³), so2_24h (µg/m³), pm25 (µg/m³)]
     $ EEA: [pm10 (µg/m³), o3_1h (µg/m³), no2_1h (µg/m³), so2_1h (µg/m³), pm25 (µg/m³)]
     
