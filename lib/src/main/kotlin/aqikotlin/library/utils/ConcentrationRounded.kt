@@ -21,8 +21,7 @@ class ConcentrationRounded(
 
     private fun convert(concentration: Double, pollutant: String): Double {
         return if (!convertIfRequired) concentration else round (
-            concentration * molecularWeights[pollutant]!!.toDouble() /
-                    (22.41 * ((273.15 + temperature) / 273.15) * 1 / (pressure / 1013.25))
+            concentration * (22.41 * ((273.15 + temperature) / 273.15) * 1 / (pressure / 1013.25)) / molecularWeights[pollutant]!!.toDouble()
         )
     }
 

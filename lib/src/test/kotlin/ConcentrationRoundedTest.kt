@@ -47,12 +47,12 @@ class ConcentrationRoundedTest {
     fun convertIfRequired() {
         // given
         val pollutantCode = POLLUTANT_O3_1H
-        val pollutantConcentration = 76.4
+        val pollutantConcentration = 150.0
         val algorithm = EPA
         // when
         val result = ConcentrationRounded(pollutantCode, pollutantConcentration, algorithm, true).
         getRoundedConcentrationOnPollutantCode()
         // then
-        assertEquals(150, result)
+        assertEquals(76, result)
     }
 }
